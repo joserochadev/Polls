@@ -1,0 +1,32 @@
+@hostname = http://localhost:3333
+
+
+# CREATE NEW POLL
+POST  {{hostname}}/polls
+Content-Type: application/json
+
+{
+  "title": "Melhor Jogo",
+  "options": [
+    "Zelda",
+    "Sekiro"
+  ]
+}
+
+###
+
+# LIST POLL
+
+GET {{hostname}}/polls/c3ade1fe-5a41-43da-a43e-e6b98ac3e563
+
+###
+# VOTE ON POLL
+
+POST {{hostname}}/polls/c3ade1fe-5a41-43da-a43e-e6b98ac3e563/votes
+Content-Type: application/json
+
+{
+  "pollOptionId":"4dda4701-55f5-4abc-825a-d5114f31418f"
+}
+
+
